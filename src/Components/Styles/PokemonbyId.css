@@ -1,3 +1,7 @@
+:root {
+    --size: 15px
+}
+
 .card_id {
     display: flex;
     flex-direction: column;
@@ -7,7 +11,8 @@
     background-image: url(https://thumbs.dreamstime.com/b/pokemon-va-logotipo-en-el-fondo-de-madera-74496934.jpg);
     background-position: center;
     background-size: 100%;
-    font-weight:800;
+    font-weight: 800;
+    font-size: var(--size);
 }
 
 .card_pokeImage {
@@ -37,7 +42,7 @@
 .card_caracteris {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15%;
 }
@@ -134,7 +139,7 @@
     box-sizing: border-box;
     padding: 5%;
     backdrop-filter: blur(8px);
-    
+
 }
 
 .card_m {
@@ -143,9 +148,48 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2%;
+    transition: all 0.5s;
+}
+
+.card_m:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.card_linkpok {
+    text-decoration: none;
+    background-color: rgb(203, 192, 192);
+    color: red;
+    border: none;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: var(--size);
+    font-weight: 800;
+    animation: jump 1s ease infinite
+}
+
+@keyframes jump {
+    from { transform: scale(0.9);}
+
+    to {transform: scale(1.2);}
 
 }
 
+
+
+
 .card_m::first-letter {
     text-transform: capitalize;
+}
+
+@media(max-width:300px) {
+    :root {
+        --size: 12px
+    }
+}
+
+@media(max-width:200px) {
+    :root {
+        --size: 10px
+    }
 }

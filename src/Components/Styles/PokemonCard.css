@@ -1,9 +1,13 @@
 :root {
     --sizeT: 20px;
-    --sizeButtons:15px;
+    --sizeButtons: 15px;
     --sizeTipe: 18px;
     --sizeaStates: 18px;
     --blur: 6px
+}
+
+.card_text {
+    font-size: var(--sizeT);
 }
 
 .card_pokedex {
@@ -12,7 +16,8 @@
     background-position: center;
     font-weight: 900;
 }
-.card_button{
+
+.card_button {
     font-size: var(--sizeButtons);
 }
 
@@ -99,6 +104,9 @@
 .card_pokemonCard:hover {
     transform: scale(1.1);
     transition: all 0.5s;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card_pokemonImage {
@@ -178,27 +186,16 @@
     max-width: 50%;
     margin: 0px auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     height: 50px;
-    gap: 8px;
+    gap: 5%;
     margin: 0 auto;
 }
 
-.card_buttons::-webkit-scrollbar {
-    background-color: rgb(239, 27, 27);
-    border-radius: 10px;
-    height: 10px;
-
-}
-
-.card_buttons::-webkit-scrollbar-thumb {
-    background-color: rgb(39, 37, 37);
-    border-radius: 10px;
-}
-
-.button_number {
-    width: 100%;
+.button_number,
+.card_rotate {
+    max-width: 25px;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -207,7 +204,8 @@
     font-weight: 800;
 }
 
-.button_number:hover {
+.button_number:hover,
+.card_rotate:hover {
     background-color: red;
     color: white;
 }
@@ -221,7 +219,6 @@
     .card_pokemonCards {
         grid-template-columns: repeat(2, 1fr)
     }
-
 }
 
 @media(max-width:650px) {
@@ -233,24 +230,44 @@
 @media(max-width:430px) {
     :root {
         --sizeT: 20px;
-        --sizeButtons:12px;
+        --sizeButtons: 12px;
         --sizeTipe: 18px;
         --sizeaStates: 18px;
     }
 }
+
 @media(max-width:350px) {
     :root {
         --sizeT: 20px;
-        --sizeButtons:10px;
+        --sizeButtons: 10px;
         --sizeTipe: 18px;
         --sizeaStates: 18px;
     }
 }
+
 @media(max-width:300px) {
     :root {
         --sizeT: 17px;
-        --sizeButtons:10px;
+        --sizeButtons: 10px;
         --sizeTipe: 15px;
         --sizeaStates: 15px;
+    }
+}
+
+@media(max-width:240px) {
+    :root {
+        --sizeT: 15px;
+        --sizeButtons: 8px;
+        --sizeTipe: 12px;
+        --sizeaStates: 12px;
+    }
+}
+
+@media(max-width:200px) {
+    :root {
+        --sizeT: 12px;
+        --sizeButtons: 6px;
+        --sizeTipe: 10px;
+        --sizeaStates: 10px;
     }
 }

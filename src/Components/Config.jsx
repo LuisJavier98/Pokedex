@@ -16,7 +16,7 @@ const Config = ({ setNumber }) => {
         <div className='card_config2'>
             <img className='card_header' src={Header} alt="Header image" />
             <form className='card_number'>
-                <p>How many pokemons do you want to show in your screen?</p>
+                <p className='card_text'>How many pokemons do you want to show in your screen?</p>
                 <select onChange={handleChange} name="Number" id="" className='card_select'>
                     <option className='card_option' selected='true' disabled='disabled'>Select a number</option>
                     <option className='card_option' value="4">4</option>

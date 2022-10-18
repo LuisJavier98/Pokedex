@@ -7,7 +7,8 @@ import Pokedex from '../Images/POKEDEX.png'
 import Cards from './Re-use/Cards'
 import { Link, useNavigate } from 'react-router-dom'
 import Loading from '../Images/LOADING.gif'
-
+import { MdNavigateNext } from 'react-icons/md'
+import { MdNavigateBefore } from 'react-icons/md'
 
 const PokemonCard = ({ Number }) => {
   const [pokemonsName, setPokemonsName] = useState()
@@ -15,6 +16,7 @@ const PokemonCard = ({ Number }) => {
   const [name, setname] = useState()
   const [group, setgroup] = useState()
   const [move, setmove] = useState(0)
+  const [next, setnext] = useState(0)
   const navigate = useNavigate()
   const number = +Number
 
@@ -23,6 +25,7 @@ const PokemonCard = ({ Number }) => {
     setname()
     settype(e.target.value)
     setmove(0)
+    setnext(0)
   }
   const getName = e => {
     e.preventDefault()
@@ -39,6 +42,12 @@ const PokemonCard = ({ Number }) => {
       left: 0,
       behavior: "smooth"
     })
+  }
+  const handleNext = () => {
+    setnext(next + 5)
+  }
+  const handleBefore = () => {
+    setnext(next - 5)
   }
 
 
@@ -135,14 +144,23 @@ const PokemonCard = ({ Number }) => {
           </div>
           <div className='card_contain'>
             <div className='card_buttons'>
-              {group?.map(function (g, i, a) {
-                return <button className='button_number' onClick={getNumber} id={i}>{i + 1}</button>
+              {
+                next == 0 ?
+                  " " : <button className='card_rotate' onClick={handleBefore}><MdNavigateBefore /> </button>
+              }
+              {group?.map(function (g, i) {
+                if (i >= next && i < next + 5)
+                  return <button className='button_number' onClick={getNumber} id={i}>{i + 1}</button>
               })}
+              {
+                next + 5 < group?.length ?
+                  <button className='card_rotate' onClick={handleNext}><MdNavigateNext /></button> : " "
+              }
             </div>
           </div>
-        </div> : <img className='card_loading' src={Loading} alt="Loading" />}
+        </div> : navigate('/PokemonNotFound')
+      }
     </div>
   )
 }
-
 export default PokemonCard

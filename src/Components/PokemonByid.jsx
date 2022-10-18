@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Header from '../Images/HEADER.png'
 import Pokedex from '../Images/POKEDEX.png'
 import './Styles/PokemonbyId.css'
@@ -58,8 +58,7 @@ const PokemonByid = () => {
           {pokemon?.moves.map(m => <div className='card_m'>{m.move.name}</div>)}
         </div>
       </div>
-
-
+      <button className='card_linkpok' ><Link className='card_linkpoke' to='/pokedex'>Back to Pokedex</Link></button>
 
     </div>
   )
