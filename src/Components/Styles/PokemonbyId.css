@@ -1,0 +1,151 @@
+.card_id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(https://thumbs.dreamstime.com/b/pokemon-va-logotipo-en-el-fondo-de-madera-74496934.jpg);
+    background-position: center;
+    background-size: 100%;
+    font-weight:800;
+}
+
+.card_pokeImage {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.principal_tittle {
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    border: 1px solid rgb(115, 104, 104);
+
+}
+
+.principal_name {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.principal_name::first-letter {
+    text-transform: capitalize;
+}
+
+.card_caracteris {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 15%;
+}
+
+.card_caract {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15%;
+    margin-top: 20px;
+}
+
+.card_type,
+.card_abili {
+    text-align: center;
+}
+
+.card_types,
+.card_ability {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.types,
+.card_abi {
+    border: 1px solid rgb(115, 104, 104);
+    box-sizing: border-box;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.types::first-letter,
+.card_abi {
+    text-transform: capitalize;
+}
+
+.subtittle {
+    align-self: stretch;
+}
+
+.card_principal {
+    width: 90%;
+
+}
+
+.stats {
+    width: 100%;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.card_bar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid rgb(115, 104, 104);
+    background-color: rgb(208, 197, 197);
+    border-radius: 5px;
+    margin: 10px 0px;
+    position: relative;
+}
+
+.card_minibar {
+    width: 10%;
+    height: 20px;
+    border: 1px solid rgb(115, 104, 104);
+    border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background-color: red;
+}
+
+.card_movements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.card_move,
+.card_principal {
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(115, 104, 104);
+    box-sizing: border-box;
+    padding: 5%;
+    backdrop-filter: blur(8px);
+    
+}
+
+.card_m {
+    border: 1px solid rgb(203, 192, 192);
+    background-color: rgb(203, 192, 192);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 2%;
+
+}
+
+.card_m::first-letter {
+    text-transform: capitalize;
+}

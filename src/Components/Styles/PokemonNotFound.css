@@ -1,0 +1,42 @@
+.pokemonNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card_pokeball {
+    width: 50%;
+    animation: move 4s ease-out infinite
+}
+
+.card_pokenotfound {
+    color: rgb(255, 255, 255);
+}
+
+@keyframes move {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(1080deg);
+    }
+
+}
+.card_linkpoke{
+    text-decoration: none;
+    color:rgb(220, 22, 22);
+    animation: letter 1s ease infinite
+}
+@keyframes letter {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
+    
+}

@@ -1,0 +1,31 @@
+.card_config2{
+    height: 100%;
+}
+
+.card_number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card_link {
+    text-align: center;
+    color: rgb(220, 22, 22);
+    animation: letter 1s ease infinite;
+    text-decoration: none;
+    margin: 20px auto;
+    width: 30%;
+}
+
+@keyframes letter {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.3);
+    }
+
+}
