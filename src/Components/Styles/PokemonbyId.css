@@ -8,7 +8,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url(https://thumbs.dreamstime.com/b/pokemon-va-logotipo-en-el-fondo-de-madera-74496934.jpg);
     background-position: center;
     background-size: 100%;
     font-weight: 800;
@@ -136,7 +135,7 @@
     border: 1px solid rgb(115, 104, 104);
     box-sizing: border-box;
     padding: 5%;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(30px);
 
 }
 
@@ -176,9 +175,6 @@
     }
 
 }
-
-
-
 
 .card_m::first-letter {
     text-transform: capitalize;

@@ -68,7 +68,7 @@ const PokemonByid = () => {
           {pokemon?.moves.map(m => <div className='card_m'>{m.move.name}</div>)}
         </div>
       </div>
-      <button className='card_linkpok' ><Link className='card_linkpoke' to='/pokedex'>Back to Pokedex</Link></button>
+      <button className='card_linkpok' ><Link style={{color:'black'}} className='card_linkpoke' to='/pokedex'>Back to Pokedex</Link></button>
 
     </div>
   )

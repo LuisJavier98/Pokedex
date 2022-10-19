@@ -1,8 +1,12 @@
+html{
+    background-image: url(https://static.wixstatic.com/media/2e8bc4_abd06ce45d5847a58bd9adbb6ad04308~mv2.png/v1/fill/w_1024,h_1024,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2e8bc4_abd06ce45d5847a58bd9adbb6ad04308~mv2.png);
+}
+
+
 body {
     min-height: 100vh;
     max-width: 1024px;
     margin: 0 auto;
-    background-color: rgb(151, 150, 150);
 }
 
 .App {

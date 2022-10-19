@@ -3,7 +3,7 @@
     --sizeButtons: 15px;
     --sizeTipe: 18px;
     --sizeaStates: 18px;
-    --blur: 6px
+    --blur: 20px
 }
 
 .card_text {
@@ -12,7 +12,7 @@
 
 .card_pokedex {
     position: relative;
-    background-image: url(https://thumbs.gfycat.com/AlarmingSlipperyAstrangiacoral-size_restricted.gif);
+    backdrop-filter: blur(25px);
     background-position: center;
     font-weight: 900;
 }
@@ -152,7 +152,7 @@
 
 .card_info {
     padding: 35px 0px;
-    background-color: rgb(193, 177, 177);
+    background-color: rgb(176, 176, 176);
     width: 100%;
 }
 
@@ -201,7 +201,8 @@
     font-size: var(--sizeButtons);
     box-sizing: border-box;
     font-weight: 800;
-    padding: 2%;
+    padding: 1%;
+
 }
 .card_rotate{
     max-width: 40px;
@@ -212,6 +213,7 @@
     box-sizing: border-box;
     font-weight: 800;
     padding-top:0;
+
 }
 
 .button_number:hover,
