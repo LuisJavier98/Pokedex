@@ -66,6 +66,7 @@
     align-items: center;
     justify-content: center;
     gap: 5%;
+    flex-wrap: wrap;
 }
 
 .types,
@@ -74,6 +75,7 @@
     box-sizing: border-box;
     padding: 2%;
     box-sizing: border-box;
+    margin: 2%;
 }
 
 .types::first-letter,

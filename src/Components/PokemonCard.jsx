@@ -12,7 +12,7 @@ import { MdNavigateBefore } from 'react-icons/md'
 
 const PokemonCard = ({ Number }) => {
   const [pokemonsName, setPokemonsName] = useState()
-  const [type, settype] = useState()
+  const [type, settype] = useState('All Pokemons')
   const [name, setname] = useState()
   const [group, setgroup] = useState()
   const [move, setmove] = useState(0)
@@ -63,34 +63,38 @@ const PokemonCard = ({ Number }) => {
         })
         .catch(err => navigate('/pokemonNotFound'))
     }
-    else if (!type) {
-      URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
-      axios.get(URL)
-        .then(function (res) {
-          const g = []
-          const arr = function (id) {
-            const a = []
-            for (let index = id; index < number + id; index++) {
-              if (res.data.results[index])
-                a.push(res.data.results[index])
+    else if (type == 'All Pokemons') {
+      setTimeout(() => {
+        URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
+        axios.get(URL)
+          .then(function (res) {
+            const g = []
+            const arr = function (id) {
+              const a = []
+              for (let index = id; index < number + id; index++) {
+                if (res.data.results[index])
+                  a.push(res.data.results[index])
+              }
+              return a
             }
-            return a
+            for (let i = 0; i < res.data.results.length; i = i + number) {
+              g.push(arr(i))
+            }
+            setgroup(g)
+            return setPokemonsName(g[move])
           }
-          for (let i = 0; i < res.data.results.length; i = i + number) {
-            g.push(arr(i))
-          }
-          setgroup(g)
-          return setPokemonsName(g[move])
-        }
-        )
-        .catch(err => console.log(err))
+          )
+          .catch(err => console.log(err))
+      }, 1000);
     }
     else {
       URL = `https://pokeapi.co/api/v2/type/${type}/`
       axios.get(URL)
         .then(function (res) {
           const result = res.data.pokemon.map(e => e.pokemon)
+          if(result.length!=0){
           const g = []
+          console.log(result)
           const arr = function (id) {
             const a = []
             for (let index = id; index < number + id; index++) {
@@ -106,11 +110,13 @@ const PokemonCard = ({ Number }) => {
           }
 
           setgroup(g)
-          return setPokemonsName(g[move])
+          return setPokemonsName(g[move])}
+          else navigate('/PokemonNotFound')
         })
         .catch(err => console.log(err))
     }
   }, [type, name, move])
+
 
 
   const [species, setspecies] = useState()
@@ -134,6 +140,7 @@ const PokemonCard = ({ Number }) => {
               <button className='card_button'>Search</button>
               <select style={{ textTransform: 'capitalize', color: 'white' }} onChange={selectType} className='card_select' name="Species" id="selectspecie">
                 <option className='card_option' selected='true' disabled='disabled'>Search here</option>
+                <option className='card_option' value='All Pokemons' >All Pokemons</option>
                 {species?.map(s => <option key={s.url} className='card_option' style={{ textTransform: 'capitalize' }} value={s.name}>{s.name}</option>)}
               </select>
               <Link to='/config'><button className='card_config'  >⚙</button></Link>
@@ -158,7 +165,9 @@ const PokemonCard = ({ Number }) => {
               }
             </div>
           </div>
-        </div> : navigate('/PokemonNotFound')
+        </div>
+        : <img className='card_loading' src={Loading} alt='Loading' />
+
       }
     </div>
   )
