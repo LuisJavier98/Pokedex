@@ -193,15 +193,25 @@
     margin: 0 auto;
 }
 
-.button_number,
-.card_rotate {
-    max-width: 25px;
+.button_number{
+    max-width: 40px;
     cursor: pointer;
     border: none;
     background-color: transparent;
     font-size: var(--sizeButtons);
     box-sizing: border-box;
     font-weight: 800;
+    padding: 2%;
+}
+.card_rotate{
+    max-width: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: var(--sizeButtons);
+    box-sizing: border-box;
+    font-weight: 800;
+    padding-top:0;
 }
 
 .button_number:hover,

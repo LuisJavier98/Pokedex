@@ -9,6 +9,7 @@ const PokemonByid = () => {
 
   const { id } = useParams()
   const [pokemon, setpokemon] = useState()
+  const [color, setcolor] = useState()
   useEffect(() => {
     if (id) {
       URL = `https://pokeapi.co/api/v2/pokemon/${id}/`
@@ -17,7 +18,16 @@ const PokemonByid = () => {
         .catch(err => console.log(err))
     }
   }, [id])
-  console.log(pokemon)
+
+  useEffect(() => {
+    if (pokemon)
+      axios.get(pokemon.species.url)
+        .then(res => setcolor(res.data.color))
+        .catch(err => console.log(err))
+  }, [pokemon])
+
+
+
 
   return (
     <div className='card_id'>
@@ -25,12 +35,12 @@ const PokemonByid = () => {
       <img className='card_image_card' src={Pokedex} alt="" />
       <div className='card_principal'>
         <img className='card_pokeImage' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
-        <h1 className='principal_tittle' >#{pokemon?.order}</h1>
-        <h1 className='principal_name'>{pokemon?.name}</h1>
+        <h1 className='principal_tittle' style={{color:`${color?.name}`}} >#{pokemon?.order}</h1>
+        <h1 className='principal_name' style={{color:`${color?.name}`}} >{pokemon?.name}</h1>
         <hr />
         <div className='card_caract'>
-          <span>Height<br />{pokemon?.height}</span>
-          <span>Weight<br />{pokemon?.weight}</span>
+          <span style={{textAlign:'center'}} >Height<br />{pokemon?.height}</span>
+          <span style={{textAlign:'center'}}>Weight<br />{pokemon?.weight}</span>
         </div>
         <div className='card_caracteris'>
           <div >
@@ -48,7 +58,7 @@ const PokemonByid = () => {
         </div>
         <h2 className='subtittle'>Stats</h2><hr />
         <div className='stats'>
-          {pokemon?.stats.map(s => <><div className='stat'><span>{s.stat.name}</span><span>{s.base_stat}/{s.base_stat + 100}</span></div><div className='card_bar'><div className='card_minibar'></div></div> </>)}
+          {pokemon?.stats.map(s => <><div className='stat'><span>{s.stat.name}</span><span>{s.base_stat}/200</span></div><div className='card_bar'><div className='card_minibar' style={{width: `${s.base_stat / 2}%`,background:`linear-gradient(-90deg,${color?.name} , white) `}} ></div></div> </>)}
         </div>
 
       </div>

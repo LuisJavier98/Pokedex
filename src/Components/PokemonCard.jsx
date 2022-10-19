@@ -64,7 +64,7 @@ const PokemonCard = ({ Number }) => {
         .catch(err => navigate('/pokemonNotFound'))
     }
     else if (!type) {
-      URL = 'https://pokeapi.co/api/v2/pokemon/'
+      URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
       axios.get(URL)
         .then(function (res) {
           const g = []

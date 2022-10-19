@@ -112,7 +112,6 @@
 }
 
 .card_minibar {
-    width: 10%;
     height: 20px;
     border: 1px solid rgb(115, 104, 104);
     border-radius: 5px;
@@ -120,7 +119,6 @@
     position: absolute;
     top: -1px;
     left: -1px;
-    background-color: red;
 }
 
 .card_movements {
@@ -169,9 +167,13 @@
 }
 
 @keyframes jump {
-    from { transform: scale(0.9);}
+    from {
+        transform: scale(0.9);
+    }
 
-    to {transform: scale(1.2);}
+    to {
+        transform: scale(1.2);
+    }
 
 }
 
