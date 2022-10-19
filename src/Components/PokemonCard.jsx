@@ -64,7 +64,7 @@ const PokemonCard = ({ Number }) => {
         .catch(err => navigate('/pokemonNotFound'))
     }
     else if (type == 'All Pokemons') {
-      setTimeout(() => {
+      
         URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
         axios.get(URL)
           .then(function (res) {
@@ -85,7 +85,6 @@ const PokemonCard = ({ Number }) => {
           }
           )
           .catch(err => console.log(err))
-      }, 1000);
     }
     else {
       URL = `https://pokeapi.co/api/v2/type/${type}/`

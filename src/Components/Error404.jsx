@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Error404 = () => {
   return (
-    <div>
-      <h1>Error404 | Page not found</h1>
-      <Link to='/' >Back Home</Link>
+    <div style={{display:'flex' ,flexDirection:'column',height:'100vh' }}>
+      <h1 style={{textAlign:'center'}}>Error404 | Page not found</h1>
+      <Link className='card_link' style={{textAlign:'center'} } clas to='/' >Back Home</Link>
     </div>
   )
 }
